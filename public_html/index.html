@@ -1,23 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.Locale;	
+public class Programa {
+	
+	private static final char[] Cliente = null;
+
+
+	public static void main(String[] args) throws ParseException  {
+	    Scanner sc = new Scanner(System.in);
+	    Locale.setDefault(Locale.US);
+	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	    Calendar cal = Calendar.getInstance();
+	
+		String nomeDoAnuncio;
+		String Cliente;
+		int op = 1;
+		double investimentoDia;
+		
+		
+		
+	    
+	    do {
+		System.out.printf("Digite o nome do anúncio:");
+	    nomeDoAnuncio = sc.next();
+	    
+	    System.out.printf("Nome do cliente:");
+	    Cliente = sc.next();
+	    
+	    System.out.printf("Investimento do dia: R$");
+	    investimentoDia = sc.nextDouble();
+	    
+		System.out.printf("Digite a data que deseja iniciar:");
+		Date dataDeInicio = sdf.parse(sc.next());
+		
+		cal.setTime(dataDeInicio);
+		
+	    cal.add(Calendar.MONTH, 2);
+	    
+		System.out.printf("Digite até que data anunciar:");
+		Date dataDeTermino = sdf.parse(sc.next());
+		
+		cal.setTime(dataDeTermino);
+		
+	    cal.add(Calendar.MONTH, 2);
+	    
+	    System.out.println("Cadastro efetuado com sucesso!");
+        System.out.println("------------------------------------------------------");
+	    
+	        System.out.printf("Digite [1] para continuar, ou outro valor para sair:");
+	        op = sc.nextInt();
+	        int linha = 0;
+		    linha++;
+	     } while(op==1);
+	    
+	    
+		        
+	        System.out.printf("Digite [2] para gerar relatório do anúncio cadastrado, ou outro valor para sair:");
+	         op = sc.nextInt();
+	         int linha = 0;
+		     linha++;
+		     int op1 = 3;
+		     int op2 = 4;
+		
+			 
+	          if(op==2) {
+	        	  
+	        	    
+		    	    double visualizacoes = 0;
+			        double compartilhamento = 0; 
+			        double cliques = 0;
+			        double visualizacoes2 = 0;
+			        
+			        System.out.println("Referente ao cadastro preenchido acima:");
+			        
+			        
+			        
+					System.out.printf("Valor total investido: R$");
+					visualizacoes = (investimentoDia * 30);
+					System.out.printf("%.2f%n" , visualizacoes);
+				    
+				    System.out.printf("Quantidade máxima de cliques:");
+				    cliques = (visualizacoes * 0.12);
+				    System.out.printf("%.2f%n" , cliques);
+			        
+			        System.out.printf("Quantidade máxima de compartilhamentos:");
+			        compartilhamento = (cliques * 0.15);
+			        System.out.printf("%.2f%n" , compartilhamento);
+			        
+			        System.out.printf("Quantidade máxima de visualizações:");
+			        visualizacoes2 = (compartilhamento * 40);
+			        System.out.printf("%.2f%n" , visualizacoes2);
+			       
+			        }
+		   System.out.println("------------------------------------------------------");
+
+	    System.out.println("Obrigada por utilizar! :)");
+	    
+		    sc.close();  
+	   
+	          }
+
+
+	private static Object op1(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+			
+	}
+
+
+
+		
